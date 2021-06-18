@@ -26,10 +26,11 @@ jobs:
 
       - name: Upload stable stubs to PyPi
         if: github.event_name == 'release' && (github.event.action== 'published' || github.event.action == 'rerequested')
-        run: echo "Need to upload stable release to PyPi"
-        python setup.py sdist
-        twine upload dist/*
-        echo "stable upload complete"
+        run: |
+          echo "Need to upload stable release to PyPi"
+          python setup.py sdist
+          twine upload dist/*
+          echo "stable upload complete"
 
       - name: Upload dev stubs to PyPi
         if: github.event_name == 'push'
