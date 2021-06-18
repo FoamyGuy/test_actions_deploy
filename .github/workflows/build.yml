@@ -22,11 +22,12 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
       - name: Upload stable stubs to PyPi
         if: github.event_name == 'release' && (github.event.action== 'published' || github.event.action == 'rerequested')
-        uses: actions/checkout@v2
         run: |
           echo "Need to upload stable release to PyPi"
           python setup.py sdist
@@ -34,7 +35,6 @@ jobs:
           echo "stable upload complete"
 
       - name: Upload dev stubs to PyPi
-        uses: actions/checkout@v2
         if: github.event_name == 'push'
         run: |
           echo "Need to upload dev release to PyPi"
