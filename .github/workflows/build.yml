@@ -1,5 +1,12 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+  pull_request:
+  release:
+    types: [published]
+  check_suite:
+    types: [rerequested]
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
