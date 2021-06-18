@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Multiline
-          run: |
-            echo "test multiline"
-            echo "action is ${{ github.event.action }}
+        run: |
+          echo "test multiline"
+          echo "action is ${{ github.event.action }}
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
