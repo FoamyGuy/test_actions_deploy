@@ -1,6 +1,8 @@
 name: GitHub Actions Demo
 on:
   push:
+    branches:
+      - main
   pull_request:
   release:
     types: [published]
@@ -27,7 +29,7 @@ jobs:
         run: echo "Need to upload stable release to PyPi"
 
       - name: Upload dev stubs to PyPi
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'push'
         run: |
-          echo "Need to upload stable release to PyPi"
+          echo "Need to upload dev release to PyPi"
           echo "action is ${{ github.event.action }}"
