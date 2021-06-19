@@ -32,9 +32,10 @@ setup(
     maintainer="Tim Cocks",
     maintainer_email="foamyguy@gmail.com",
     author_email="foamyguy@gmail.com",
-    version=version,
+    #version=version,
+    setup_requires=["setuptools_scm", "setuptools>=38.6.0"],
+    use_scm_version=True,
     license="MIT",
 
-    setup_requires=["setuptools>=38.6.0"],
     py_modules=["foamyguy_testing_actions"]
 )
