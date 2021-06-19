@@ -35,7 +35,7 @@ setup(
     maintainer_email="foamyguy@gmail.com",
     author_email="foamyguy@gmail.com",
     #version=version,
-    setup_requires=["setuptools_scm", "setuptools>=42"],
+    setup_requires=["setuptools_scm", "setuptools>=38.6.0"],
     use_scm_version={"local_scheme": local_scheme},
     license="MIT",
 
