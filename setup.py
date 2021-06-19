@@ -24,6 +24,8 @@ import re
 #     pieces.pop()
 # version = "-".join(pieces)
 
+def local_scheme(version):
+    return ""
 
 setup(
     name="foamyguy-test-actions-deploy",
@@ -34,7 +36,7 @@ setup(
     author_email="foamyguy@gmail.com",
     #version=version,
     setup_requires=["setuptools_scm", "setuptools>=42"],
-    use_scm_version=True,
+    use_scm_version={"local_scheme": local_scheme},
     license="MIT",
 
     py_modules=["foamyguy_testing_actions"]
