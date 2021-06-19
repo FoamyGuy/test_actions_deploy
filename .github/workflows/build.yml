@@ -37,10 +37,9 @@ jobs:
           TWINE_USERNAME: ${{ secrets.pypi_username }}
           TWINE_PASSWORD: ${{ secrets.pypi_password }}
         run: |
-          echo "Need to upload stable release to PyPi"
+          echo "Uploading stable release to PyPi"
           python setup.py sdist
           twine upload dist/*
-          echo "stable upload complete"
 
       - name: Upload dev stubs to PyPi
         if: github.event_name == 'push'
@@ -48,8 +47,6 @@ jobs:
           TWINE_USERNAME: ${{ secrets.pypi_username }}
           TWINE_PASSWORD: ${{ secrets.pypi_password }}
         run: |
-          echo "Need to upload dev release to PyPi"
-          echo "action is ${{ github.event.action }}"
+          echo "Uploading dev release to PyPi"
           python setup.py sdist
           twine upload dist/*
-          echo "dev upload complete"
